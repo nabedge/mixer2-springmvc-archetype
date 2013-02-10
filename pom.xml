@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.mixer2.archetype</groupId>
+    <groupId>org.mixer2</groupId>
     <artifactId>mixer2-springmvc-archetype</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
