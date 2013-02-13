@@ -7,8 +7,8 @@
     <artifactId>mixer2-springmvc-archetype</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
-
     <name>${project.artifactId}</name>
+    <description>archetype for SpringMVC web application with mixer2</description>
     <url>http://mixer2.org/</url>
 
     <properties>
@@ -28,6 +28,28 @@
         <developerConnection>scm:git:ssh://git@github.com:nabedge/mixer2-springmvc-archetype.git</developerConnection>
         <url>https://github.com/nabedge/mixer2-springmvc-archetype</url>
     </scm>
+
+    <organization>
+        <name>Project Mixer2</name>
+        <url>http://mixer2.org/</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>nabedge</id>
+            <name>watanabe</name>
+            <email>nabedge_at_gmail_dot_com</email>
+            <url>http://twitter.com/nabedge/</url>
+            <timezone>+9</timezone>
+        </developer>
+    </developers>
+
+    <mailingLists>
+        <mailingList>
+            <name>mixer2-ja</name>
+            <archive>http://groups.google.com/group/mixer2-ja</archive>
+        </mailingList>
+    </mailingLists>
 
     <licenses>
         <license>
@@ -67,7 +89,7 @@
                 <version>1.4</version>
                 <configuration>
                     <keyname>nabedge</keyname>
-                <!-- <skip>true</skip> -->
+                    <!-- <skip>true</skip> -->
                 </configuration>
                 <executions>
                     <execution>
