@@ -5,7 +5,7 @@
 
     <groupId>org.mixer2</groupId>
     <artifactId>mixer2-springmvc-archetype</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.2-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
     <name>${project.artifactId}</name>
     <description>archetype for SpringMVC web application with mixer2</description>
@@ -88,7 +88,6 @@
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.4</version>
                 <configuration>
-                    <keyname>nabedge</keyname>
                     <!-- <skip>true</skip> -->
                 </configuration>
                 <executions>
