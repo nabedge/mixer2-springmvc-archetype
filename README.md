@@ -1,5 +1,5 @@
 mixer2-springmvc-archetype
 ==========================
 
-sorry.
-now construction.
+see http://mixer2.org/
+

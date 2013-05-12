@@ -4,20 +4,22 @@
 package ${package}.controller;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.mixer2.Mixer2Engine;
 import org.mixer2.jaxb.xhtml.Html;
 import org.mixer2.springmvc.Mixer2XhtmlView;
+import org.mixer2.xhtml.PathAjuster;
 import org.mixer2.xhtml.exception.TagTypeUnmatchException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import ${package}.util.RequestUtil;
 import ${package}.view.IndexHelper;
-import ${package}.view.M2staticHelper;
 
 @Controller
 public class IndexController {
@@ -39,8 +41,12 @@ public class IndexController {
         Html html = mixer2Engine.loadHtmlTemplate(resourceLoader.getResource(
                 mainTemplate).getInputStream());
 
-        M2staticHelper.replaceM2staticPath(html);
         IndexHelper.replaceMessage(html);
+
+        // replace static file path
+        Pattern pattern = Pattern.compile("^\\.+/.*m2static/(.*)$");
+        String ctx = RequestUtil.getContextPath();
+        PathAjuster.replacePath(html, pattern, ctx + "/m2static/$1");
 
         return new Mixer2XhtmlView(mixer2Engine, html);
     }

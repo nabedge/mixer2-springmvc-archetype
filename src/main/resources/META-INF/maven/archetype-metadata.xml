@@ -25,6 +25,7 @@
     <fileSet encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
+        <include>**/*.jpg</include>
         <include>**/*.png</include>
         <include>**/*.css</include>
       </includes>

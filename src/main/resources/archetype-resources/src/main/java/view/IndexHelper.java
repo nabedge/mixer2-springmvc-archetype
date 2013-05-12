@@ -15,7 +15,7 @@ public class IndexHelper {
 
     public static void replaceMessage(Html html) throws TagTypeUnmatchException {
         Div div = html.getById("message", Div.class);
-        div.getContent().clear();
+        div.unsetContent();
         div.getContent().add("Hello World !");
     }
 
