@@ -37,7 +37,9 @@
         <dependency>
             <groupId>org.mixer2</groupId>
             <artifactId>mixer2</artifactId>
-            <version>1.2.5</version>
+            <version>1.2.6</version>
+            <!-- use latest version. see -->
+            <!-- http://search.maven.org/#search|gav|1|g%3A%22org.mixer2%22%20AND%20a%3A%22mixer2%22 -->
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
