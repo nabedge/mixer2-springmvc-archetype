@@ -18,7 +18,7 @@ public class IndexController {
     private static Log log = LogFactory.getLog(IndexController.class);
     
     @RequestMapping(value = "/")
-    public String index(Model model) throws TagTypeUnmatchException, IOException {
+    public String index(Model model) {
         log.debug("going index()");
         String message = "Hello World !";
         model.addAttribute("helloMessage", message);
