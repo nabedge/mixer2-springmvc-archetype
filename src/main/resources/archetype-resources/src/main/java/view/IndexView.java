@@ -12,32 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.mixer2.jaxb.xhtml.Div;
 import org.mixer2.jaxb.xhtml.Html;
-import org.mixer2.springmvc.AbstractMixer2XhtmlView;
+import org.mixer2.spring.webmvc.AbstractMixer2XhtmlView;
 import org.mixer2.xhtml.PathAjuster;
 import org.mixer2.xhtml.exception.TagTypeUnmatchException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.core.io.ResourceLoader;
-import org.springframework.stereotype.Component;
 
-@Component
-@Scope("prototype")
 public class IndexView extends AbstractMixer2XhtmlView {
     
-    @Autowired
-    protected ResourceLoader resourceLoader;
-
     @Override
-    protected Html createHtml(Map<String, Object> model,
+    protected Html renderHtml(Html html, Map<String, Object> model,
             HttpServletRequest request, HttpServletResponse response)
-            throws IOException, TagTypeUnmatchException {
+            throws Exception {
         
         String helloMessage = (String) model.get("helloMessage");
-
-        // load html template
-        String mainTemplate = "classpath:m2mockup/m2template/index.html";
-        Html html = getMixer2Engine().loadHtmlTemplate(
-                resourceLoader.getResource(mainTemplate).getInputStream());
 
         Div div = html.getById("message", Div.class);
         div.unsetContent();
@@ -50,5 +36,4 @@ public class IndexView extends AbstractMixer2XhtmlView {
 
         return html;
     }
-    
 }

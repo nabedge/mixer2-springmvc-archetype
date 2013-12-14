@@ -22,7 +22,7 @@ public class IndexController {
         log.debug("going index()");
         String message = "Hello World !";
         model.addAttribute("helloMessage", message);
-        return "indexView";
+        return "index";
     }
 
 }
