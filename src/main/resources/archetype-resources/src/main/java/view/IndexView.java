@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.mixer2.jaxb.xhtml.Div;
 import org.mixer2.jaxb.xhtml.Html;
 import org.mixer2.spring.webmvc.AbstractMixer2XhtmlView;
-import org.mixer2.xhtml.PathAjuster;
+import org.mixer2.xhtml.PathAdjuster;
 import org.mixer2.xhtml.exception.TagTypeUnmatchException;
 
 public class IndexView extends AbstractMixer2XhtmlView {
@@ -30,9 +30,12 @@ public class IndexView extends AbstractMixer2XhtmlView {
         div.getContent().add(helloMessage);
 
         // replace static file path
-        Pattern pattern = Pattern.compile("^\\.+/.*m2static/(.*)$");
-        String ctx = request.getContextPath();
-        PathAjuster.replacePath(html, pattern, ctx + "/m2static/$1");
+        Pattern pattern = Pattern.compile("^\\.+/.*static/(.*)$");
+        String contextPath = request.getContextPath();
+        if (contextPath == null) {
+            contextPath = "";
+        }
+        PathAdjuster.replacePath(html, pattern, contextPath + "/$1");
 
         return html;
     }
