@@ -15,7 +15,7 @@ public class AppConfig {
 
     @Bean
     public Mixer2Engine mixer2Engine() {
-        return new Mixer2Engine();
+        return Mixer2EngineSingleton.getInstance();
     }
 
     @Bean
